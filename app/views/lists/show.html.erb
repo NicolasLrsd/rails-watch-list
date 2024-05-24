@@ -1,5 +1,16 @@
-<h1><%= @lists.name%><h1>
+<h1><%= @list.name %><h1>
 
 <p><%= link_to "New movie", new_list_bookmark_path(@list)%></p>
 
+<ul>
+  <p><% @list.bookmarks.each do |bookmark|%></p>
+    <li><%= bookmark.movie.title%><li>
+    <%= image_tag bookmark.movie.poster_url%>
+  <p><%end%></p>
+</ul>
+
+
 <p><%= link_to "Back to list", lists_path%></p>
+
+
+<%= console %>
